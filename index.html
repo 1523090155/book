@@ -10,6 +10,26 @@
 <body>
     <div class="container">
         <h1>云服务导航中心</h1>
+        <!-- 认证区域 -->
+        <div class="auth-section">
+            <div id="loginBox">
+                <h2>🔒 会员专属书签</h2>
+                <form id="loginForm">
+                    <input type="text" name="username" placeholder="用户名" required>
+                    <input type="password" name="password" placeholder="密码" required>
+                    <button type="submit">登录</button>
+                </form>
+                <div id="message" class="message"></div>
+            </div>           
+            <div id="bookmarks" class="hidden">
+                <div class="bookmark-header">
+                    <h3>我的书签</h3>
+                    <button onclick="logout()" class="logout-btn">退出登录</button>
+                </div>
+                <div id="bookmarkList" class="grid"></div>
+            </div>
+        </div>
+        <!-- 公共书签 -->        
         <div class="grid">
             <!-- VPS服务 -->
             <div class="card">
