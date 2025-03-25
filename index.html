@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云服务导航中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Noto Sans SC', sans-serif;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            background: white;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #6c5ce7, #a8a4f0);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-desc {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>云服务导航中心</h1>
+        <div class="grid">
+            <!-- VPS服务 -->
+            <div class="card">
+                <a href="https://vps.111600.xyz/">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-content">
+                        <div class="card-title">服务器探针</div>
+                        <div class="card-desc">实时监控服务器状态与性能指标</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 社区论坛 -->
+            <div class="card">
+                <a href="https://www.nodeseek.com/">
+                    <div class="card-icon">💬</div>
+                    <div class="card-content">
+                        <div class="card-title">技术社区</div>
+                        <div class="card-desc">NodeSeek 交流论坛</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- VPS控制台 -->
+            <div class="card">
+                <a href="https://bwh81.net/clientarea.php">
+                    <div class="card-icon">🔧</div>
+                    <div class="card-content">
+                        <div class="card-title">搬瓦工控制台</div>
+                        <div class="card-desc">服务器管理</div>
+                    </div>
+                </a>
+            </div>
+     <!-- 新增：CloudCone VPS -->
+     <div class="card"> 
+         <a href="https://app.cloudcone.com/vps"> 
+             <div class="card-icon">🚀</div> 
+             <div class="card-content"> 
+                 <div class="card-title">CloudCone VPS</div> 
+                 <div class="card-desc">CC VPS服务</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：Akile IO 服务器管理 -->
+     <div class="card"> 
+         <a href="https://akile.io/console/server"> 
+             <div class="card-icon">🔧</div> 
+             <div class="card-content"> 
+                 <div class="card-title">Akile IO 服务器管理</div> 
+                 <div class="card-desc">Akile vps</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：MHYIDC -->
+     <div class="card"> 
+         <a href="https://mhyidc.com"> 
+             <div class="card-icon">🌐</div> 
+             <div class="card-content"> 
+                 <div class="card-title">MHYIDC</div> 
+                 <div class="card-desc">香港ipv6</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：RackNerd 客户区域 -->
+     <div class="card"> 
+         <a href="https://my.racknerd.com/index.php?rp=/login"> 
+             <div class="card-icon">🔒</div> 
+             <div class="card-content"> 
+                 <div class="card-title">RackNerd 客户区域</div> 
+                 <div class="card-desc">登录账户</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：RackNerd NVM 控制台 -->
+     <div class="card"> 
+         <a href="https://nerdvm.racknerd.com/login.php"> 
+             <div class="card-icon">💻</div> 
+             <div class="card-content"> 
+                 <div class="card-title">RackNerd 控制台</div> 
+                 <div class="card-desc">服务器管理</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：ProtonMail -->
+     <div class="card"> 
+         <a href="https://proton.me"> 
+             <div class="card-icon">📧</div> 
+             <div class="card-content"> 
+                 <div class="card-title">ProtonMail</div> 
+                 <div class="card-desc">端到端加密邮件服务</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：Cloudflare -->
+     <div class="card"> 
+         <a href="https://cloudflare.com"> 
+             <div class="card-icon">☁️</div> 
+             <div class="card-content"> 
+                 <div class="card-title">Cloudflare</div> 
+                 <div class="card-desc">加速、安全与性能优化服务</div> 
+             </div> 
+         </a> 
+     </div>
+
+     <!-- 新增：ITDog -->
+     <div class="card"> 
+         <a href="https://www.itdog.cn"> 
+             <div class="card-icon">🐶</div> 
+             <div class="card-content"> 
+                 <div class="card-title">ITDog</div> 
+                 <div class="card-desc">IP测试</div> 
+             </div> 
+         </a> 
+     </div>
+     <div class="card"> 
+        <a href="https://bwg.111600.xyz:9000/zxcvbnm/xui/"> 
+            <div class="card-icon">♚</div> 
+            <div class="card-content"> 
+                <div class="card-title">瓦工入站</div> 
+                <div class="card-desc">节点管理</div> 
+            </div> 
+        </a> 
+    </div>
+    <div class="card"> 
+        <a href="https://rn.111600.xyz:2053/zxcvbnm/xui/"> 
+            <div class="card-icon">♚</div> 
+            <div class="card-content"> 
+                <div class="card-title">RN入站</div> 
+                <div class="card-desc">节点管理</div> 
+            </div> 
+        </a> 
+    </div>
+    <div class="card"> 
+        <a href="https://jp.111600.xyz:2053/zxcvbnm/xui/"> 
+            <div class="card-icon">♚</div> 
+            <div class="card-content"> 
+                <div class="card-title">Aklie入站</div> 
+                <div class="card-desc">节点管理</div> 
+            </div> 
+        </a> 
+    </div>
+
+    <div class="card"> 
+    <a href="https://alist.111600.xyz/"> 
+        <div class="card-icon">🌏</div> 
+        <div class="card-content"> 
+            <div class="card-title">alistRN</div> 
+            <div class="card-desc">alist</div> 
+        </div> 
+    </a> 
+    </div>
+            <!-- 其他服务卡片...（保持相同结构） -->
+            
+        </div>
+    </div>
+</body>
+</html>
