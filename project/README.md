@@ -73,19 +73,27 @@ SHOW COLUMNS FROM 表名;
 数据内容
 SELECT * FROM 表名;
 
+# 书签管理系统
 
-marks
-+------------+--------------+------+-----+-------------------+-------------------+
-| Field      | Type         | Null | Key | Default           | Extra             |
-+------------+--------------+------+-----+-------------------+-------------------+
-| id         | int          | NO   | PRI | NULL              | auto_increment    |
-| user_id    | int          | NO   | MUL | NULL              |                   |
-| title      | varchar(100) | NO   |     | NULL              |                   |
-| url        | varchar(255) | NO   |     | NULL              |                   |
-| created_at | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
-+------------+--------------+------+-----+-------------------+-------------------+
-5 rows in set (0.02 sec)
+这是一个简单的书签管理系统，使用 Node.js、Express 和 SQLite 构建，前端使用 HTML、CSS 和 JavaScript。
 
-users
+## 安装和运行
+
+1. 克隆项目：
+   ```bash
+   git clone <项目链接>
+   cd project
+
+2.安装后端依赖：
+cd backend
+npm install
+3.初始化数据库：
+sqlite3 database/database.db < database/init.sql
+4.启动后端服务器：
+node server.js
+5.打开 frontend/public/index.html 查看前端页面。
 
 
+---
+
+如果需要对某个文件进行扩展或调整，随时告诉我！ 😊
