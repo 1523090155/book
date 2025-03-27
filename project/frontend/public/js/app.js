@@ -1,6 +1,9 @@
 // 创建AngularJS应用
 var app = angular.module('bookmarkApp', []);
 
+// 定义新的服务端地址
+const SERVER_URL = 'http://140.82.5.217:3000';
+
 // 创建认证控制器
 app.controller('AuthController', ['$scope', '$http', function($scope, $http) {
     // 初始化变量
@@ -17,7 +20,7 @@ app.controller('AuthController', ['$scope', '$http', function($scope, $http) {
             return;
         }
 
-        $http.post('http://localhost:3000/login', {
+        $http.post(`${SERVER_URL}/login`, {
             username: $scope.username,
             password: $scope.password
         })
@@ -39,7 +42,7 @@ app.controller('AuthController', ['$scope', '$http', function($scope, $http) {
 
     // 加载书签函数
     $scope.loadBookmarks = function(userId) {
-        $http.get(`http://localhost:3000/bookmarks/${userId}`)
+        $http.get(`${SERVER_URL}/bookmarks/${userId}`)
         .then(function(response) {
             $scope.bookmarks = response.data;
         })
