@@ -12,6 +12,7 @@
         <h1>云服务导航中心</h1>
         <!-- 用户认证区域 -->
         <div class="auth-section">
+            <!-- 登录框 -->
             <div id="loginBox">
                 <h2>🔒 会员专属书签</h2>
                 <form id="loginForm">
@@ -19,20 +20,7 @@
                     <input type="password" id="password" placeholder="密码" required>
                     <button type="submit">登录</button>
                 </form>
-                <p>还没有账号？<a href="#" onclick="showRegister()">立即注册</a></p>
                 <div id="message" class="message"></div>
-            </div>
-            
-            <!-- 注册区域 -->
-            <div id="registerBox" class="hidden">
-                <h2>📝 注册账号</h2>
-                <form id="registerForm">
-                    <input type="text" id="newUsername" placeholder="用户名" required>
-                    <input type="password" id="newPassword" placeholder="密码" required>
-                    <button type="submit">注册</button>
-                </form>
-                <p>已有账号？<a href="#" onclick="showLogin()">返回登录</a></p>
-                <div id="registerMessage" class="message"></div>
             </div>
             
             <!-- 已登录书签管理 -->
@@ -44,6 +32,7 @@
                 <div id="bookmarkList" class="grid"></div>
             </div>
         </div>
+    
         
         <!-- 公共书签 -->        
         <div class="grid">
@@ -207,5 +196,6 @@
             
         </div>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
