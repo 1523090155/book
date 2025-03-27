@@ -17,12 +17,12 @@ project/
 │   │   ├── css/
 │   │   │   └── style.css        # 样式文件
 │   │   ├── js/
-│   │   │   └── main.js          # 前端逻辑脚本
+│   │   │   └── app.js          # 前端逻辑脚本
 │   │   └── index.html           # 主页面
 │   └── README.md                # 项目说明
 ├── .gitignore                   # Git忽略配置文件
 └── README.md                    # 项目整体说明文档
-Node.js + Express + SQLite
+AngularJS+Node.js + Express + SQLite
 
 
 
