@@ -31,25 +31,43 @@
 ### 克隆项目
 
 ```bash
-git clone https://github.com/your-username/bookmark-management.git
-cd bookmark-management
+git clone https://github.com/<your-github-username>/<your-repository-name>.git
+cd <your-repository-name>
 ```
 
-### 安装依赖
+### 拉取项目到服务器
+
+1. 使用 SSH 登录到您的服务器。
+2. 确保服务器上已安装 Git 和 Node.js。
+3. 在服务器上运行以下命令拉取项目：
 
 ```bash
+git clone https://github.com/<your-github-username>/<your-repository-name>.git
+cd <your-repository-name>
 npm install
 ```
 
+4. 按照以下步骤配置环境变量并启动服务器。
+
 ### 配置环境变量
 
-在项目根目录创建 `.env` 文件，添加以下内容：
+在项目根目录（`project` 目录）创建 `.env` 文件，添加以下内容：
 
 ```
 PORT=3000
 DATABASE_URL=./database.sqlite
 JWT_SECRET=your_jwt_secret
 ```
+
+- `PORT`: 服务器运行的端口号。
+- `DATABASE_URL`: SQLite 数据库文件路径。
+- `JWT_SECRET`: 用于生成和验证 JWT 的密钥。可以通过以下命令生成一个随机的密钥：
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+将生成的密钥替换 `your_jwt_secret`。
 
 ### 启动开发服务器
 
