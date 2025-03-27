@@ -11,3 +11,5 @@ CREATE TABLE bookmarks (
     url TEXT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+INSERT INTO users (username, password) VALUES ('123', '123');

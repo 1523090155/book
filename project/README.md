@@ -83,16 +83,32 @@ SELECT * FROM 表名;
    ```bash
    git clone <项目链接>
    cd project
+   ```
 
-2.安装后端依赖：
-cd backend
-npm install
-3.初始化数据库：
-sqlite3 database/database.db < database/init.sql
-4.启动后端服务器：
-node server.js
-5.打开 frontend/public/index.html 查看前端页面。
+2. 安装后端依赖：
+   ```bash
+   cd backend
+   npm install
+   ```
 
+3. 初始化数据库：
+   ```bash
+   sqlite3 database/database.db < database/init.sql
+   ```
+
+4. 启动后端服务器：
+   ```bash
+   node server.js
+   ```
+
+5. 打开前端页面：
+   使用浏览器打开 `frontend/public/index.html`。
+
+6. 如果需要安装前端依赖（可选）：
+   ```bash
+   cd frontend
+   npm install
+   ```
 
 ---
 

@@ -13,9 +13,13 @@ const app = express();
 
 // 手动设置跨域请求头
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // 允许所有域名进行跨域调用
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // 允许的请求方法
+    res.setHeader('Access-Control-Allow-Origin', process.env.CORS_ORIGIN || '*'); // 允许特定域名或所有域名
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // 允许的请求方法
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // 允许的请求头
+    res.setHeader('Access-Control-Allow-Credentials', 'true'); // 允许跨域请求携带凭据
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(204); // 对预检请求直接返回成功状态
+    }
     next();
 });
 
