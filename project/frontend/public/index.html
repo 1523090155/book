@@ -1,39 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" ng-app="bookmarkApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>云服务导航中心</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- 引入AngularJS库 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>云服务导航中心</h1>
         <!-- 用户认证区域 -->
-        <div class="auth-section">
+        <div class="auth-section" ng-controller="AuthController">
             <!-- 登录框 -->
-            <div id="loginBox">
+            <div id="loginBox" ng-show="!isLoggedIn">
                 <h2>🔒 会员专属书签</h2>
-                <form id="loginForm">
-                    <input type="text" id="username" placeholder="用户名" required>
-                    <input type="password" id="password" placeholder="密码" required>
+                <form id="loginForm" ng-submit="login()">
+                    <input type="text" ng-model="username" placeholder="用户名" required>
+                    <input type="password" ng-model="password" placeholder="密码" required>
                     <button type="submit">登录</button>
                 </form>
-                <div id="message" class="message"></div>
+                <div id="message" class="message">{{message}}</div>
             </div>
             
             <!-- 已登录书签管理 -->
-            <div id="bookmarks" class="hidden">
+            <div id="bookmarks" ng-show="isLoggedIn">
                 <div class="bookmark-header">
                     <h3>我的书签</h3>
-                    <button onclick="logout()" class="logout-btn">退出登录</button>
+                    <button ng-click="logout()" class="logout-btn">退出登录</button>
                 </div>
-                <div id="bookmarkList" class="grid"></div>
+                <div id="bookmarkList" class="grid">
+                    <div class="bookmark" ng-repeat="bookmark in bookmarks">
+                        <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}}</a>
+                    </div>
+                </div>
             </div>
         </div>
-    
-        
         <!-- 公共书签 -->        
         <div class="grid">
             <!-- VPS服务 -->
@@ -196,6 +201,5 @@
             
         </div>
     </div>
-    <script src="js/main.js"></script>
 </body>
 </html>

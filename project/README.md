@@ -97,3 +97,52 @@ node server.js
 ---
 
 如果需要对某个文件进行扩展或调整，随时告诉我！ 😊
+server {
+    listen 80;
+    server_name test.111600.xyz;
+
+    # 将 HTTP 请求重定向到 HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name test.111600.xyz;
+
+    # SSL 证书和密钥路径
+    ssl_certificate /var/www/project/111600cet.pem;
+    ssl_certificate_key /var/www/project/111600key.key;
+
+    # 优化 SSL 配置
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # 配置静态文件目录
+    root /var/www/project/frontend/public;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # API 请求转发到后端
+    location /login {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # 允许跨域请求
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'Content-Type';
+
+        # 处理 OPTIONS 请求
+        if ($request_method = OPTIONS) {
+            return 204;
+        }
+    }
+}
+
