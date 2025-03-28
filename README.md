@@ -59,7 +59,10 @@ npm test
 # book
 
 自建书签
+---------
+```   
 /*
+项目结构：
 project/
 ├── backend/
 │   ├── database/
@@ -83,6 +86,7 @@ project/
 ├── .gitignore                   # Git忽略配置文件
 └── README.md                    # 项目整体说明文档
 */
+```   
 AngularJS+Node.js + Express + SQLite
 ## 许可证
 
