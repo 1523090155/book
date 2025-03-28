@@ -55,14 +55,35 @@ npm start
 ### 运行测试
 npm test
 ## 目录结构
-/workspaces/book
-├── backend
-│   ├── server.js       # 主服务器文件
-│   ├── package.json    # 项目配置文件
-│   ├── ...             # 其他文件
-└── README.md           # 项目说明文件
-```
+/projece
+# book
 
+自建书签
+/*
+project/
+├── backend/
+│   ├── database/
+│   │   ├── database.db          # SQLite数据库文件
+│   │   ├── db.js                # 数据库连接逻辑
+│   │   └── init.sql             # 数据库初始化脚本
+│   ├── routes/
+│   │   ├── login.js             # 用户登录API
+│   │   ├── bookmarks.js         # 书签管理API
+│   │   └── logout.js            # 用户登出API
+│   ├── server.js                # Express服务器主文件
+│   └── package.json             # Node.js依赖配置
+├── frontend/
+│   ├── public/
+│   │   ├── css/
+│   │   │   └── style.css        # 样式文件
+│   │   ├── js/
+│   │   │   └── app.js           # 前端逻辑脚本
+│   │   └── index.html           # 主页面
+│   └── README.md                # 项目说明
+├── .gitignore                   # Git忽略配置文件
+└── README.md                    # 项目整体说明文档
+*/
+AngularJS+Node.js + Express + SQLite
 ## 许可证
 
 MIT © ZT
