@@ -28,68 +28,33 @@
 
 ## 安装与运行
 
-### 克隆项目
-
-```bash
-git clone https://github.com/<your-github-username>/<your-repository-name>.git
-cd <your-repository-name>
-```
-
 ### 拉取项目到服务器
 
 1. 使用 SSH 登录到您的服务器。
 2. 确保服务器上已安装 Git 和 Node.js。
 3. 在服务器上运行以下命令拉取项目：
-
-```bash
-git clone https://github.com/<your-github-username>/<your-repository-name>.git
-cd <your-repository-name>
+cd var
+git clone https://github.com/1523090155/book.git
+cd /var/book/project/backend
 npm install
-```
-
 4. 按照以下步骤配置环境变量并启动服务器。
-
 ### 配置环境变量
-
-在项目根目录（`project` 目录）创建 `.env` 文件，添加以下内容：
-
-```
+在后端项目根目录（`backend` 目录）创建 `.env` 文件，添加以下内容：
 PORT=3000
 DATABASE_URL=./database.sqlite
 JWT_SECRET=your_jwt_secret
-```
-
 - `PORT`: 服务器运行的端口号。
 - `DATABASE_URL`: SQLite 数据库文件路径。
 - `JWT_SECRET`: 用于生成和验证 JWT 的密钥。可以通过以下命令生成一个随机的密钥：
-
-```bash
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-```
-
 将生成的密钥替换 `your_jwt_secret`。
-
 ### 启动开发服务器
-
-```bash
 npm run dev
-```
-
 ### 启动生产服务器
-
-```bash
 npm start
-```
-
 ### 运行测试
-
-```bash
 npm test
-```
-
 ## 目录结构
-
-```
 /workspaces/book
 ├── backend
 │   ├── server.js       # 主服务器文件
