@@ -3,6 +3,17 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const morgan = require('morgan');
 require('dotenv').config(); // 加载环境变量
+const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
+
+const dbPath = path.resolve(__dirname, './database.sqlite'); // 使用绝对路径
+const db = new sqlite3.Database(dbPath, (err) => {
+    if (err) {
+        console.error('无法连接到数据库:', err.message);
+    } else {
+        console.log('成功连接到 SQLite 数据库:', dbPath);
+    }
+});
 
 const port = process.env.PORT || 3000;
 const loginRoute = require('./routes/login');
